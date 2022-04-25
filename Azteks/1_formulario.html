@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Obteniendo elementos HTML para su manipulación</title>
+	<style>
+		body{
+			background: black;
+			font-family: sans-serif, arial;
+			color: white;
+		}
+
+		div{
+			background: #b3591a;
+			width: 500px;
+			margin: 20px;
+			padding: 20px;
+
+		}
+		h1{
+			color: black;
+			font-size: 35px;
+			font-family: ;
+		}
+
+		img{
+			float: right;
+		}
+
+
+		.btn{
+			background-color: #4CAF50; /* Green */
+  			border: none;
+  			color: white;
+  			padding: 15px 32px;
+  			text-align: center;
+  			font-size: 16px;
+  			cursor: pointer;
+  			width: 100%
+
+		}
+		.btn:hover{
+			background-color: black;
+			color: white;
+		}
+		textarea{
+			resize: none;
+		}
+
+		/*.input-error{
+			border: 2px solid red;*/
+		}
+	</style>
+
+</head>
+<body>
+	<div class="formularioderegistro">
+	<img src="logoaztks.jpg" width="170px">
+	<h1>CLUB DEPORTIVO</h1><br>
+	<h2>FORMULARIO DE INFORMES</h2>
+
+		<form action="" class="formulario" id="formulario" name="formulario">
+
+				<label for="nombre">Nombre:</label><br>
+  				<input type="text" id="nombre" name="nombre" value=""><br><br>
+
+  				<label for="email">Correo electrónico:</label><br>
+  				<input type="text" id="email" name="email" value="" ><br><br>
+
+  				<label for="telefono">Teléfono:</label><br>
+  				<input type="tel" id="telefono" maxlength="10" size="10" name="telefono" placeholder="(a 10 digitos)" value=""><br><br>
+				
+						
+				<label for="colonia">¿De qué colonia nos contacta?</label>
+				<select id="colonia" name="colonia">
+				<option value="0">--Elige una opción--</option>
+  				<option value="valle_ceylan">Valle Ceylán</option>
+ 				<option value="izcalli_piramide">Izcalli Pirámide</option>
+  				<option value="izcalli_del_rio">Izcalli del Río</option>
+  				<option value="otra">Otra</option>
+				</select>	
+				<br>
+
+				
+				<p>Razon principal por las que esta interesado en inscribirse a nuestros cursos:</p>
+				<input type="checkbox" id="razon1" class ="razones" value="condicion_fisica">
+  				<label for="razon1">Mejorar condición física </label><br>
+
+  				<input type="checkbox" id="razon2" class="razones" value="aprender_deporte">
+ 				<label for="razon2"> Aprender un deporte</label><br>
+
+  				<input type="checkbox" id="razon3" class="razones" value="perder_peso" >
+  				<label for="razon3"> Perder peso</label><br>
+
+  				<input type="checkbox" id="razon4" class="razones" value="conocer_gente" >
+  				<label for="razon3"> Conocer gente</label><br>
+
+  				<input type="checkbox" id="razon5" class="razones" value="otra" >
+  				<label for="razon3"> Otra</label><br><br>
+
+
+				<p>Escriba su pregunta, duda o comentario a continuación:</p>
+				<textarea id="mensaje" name="mensaje" rows="10" cols="65"></textarea><br>
+				
+								
+				<ul class="error" id="error"></ul>
+			
+				<!--<button type="button" id="Enviar" onclick="validar()">Enviar</button>-->
+
+				<!--<button type="submit" class="submit" id = "submit" value="submit">Enviar</button>-->
+
+				<!--<button type="button" class="btn" id ="btn" >Enviar</button> FORMULARIOOO-->
+
+				<button type="button" class="btn" onclick="validar()">Enviar</button>
+		</form>
+		
+	
+	</div>
+
+	<script src='validar.js'></script>
+</body>
+</html>
