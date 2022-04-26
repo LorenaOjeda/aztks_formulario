@@ -3,54 +3,8 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Obteniendo elementos HTML para su manipulación</title>
-	<style>
-		body{
-			background: black;
-			font-family: sans-serif, arial;
-			color: white;
-		}
-
-		div{
-			background: #b3591a;
-			width: 500px;
-			margin: 20px;
-			padding: 20px;
-
-		}
-		h1{
-			color: black;
-			font-size: 35px;
-			font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-		}
-
-		img{
-			float: right;
-		}
-
-
-		.btn{
-			background-color: #4CAF50; /* Green */
-  			border: none;
-  			color: white;
-  			padding: 15px 32px;
-  			text-align: center;
-  			font-size: 16px;
-  			cursor: pointer;
-  			width: 100%
-
-		}
-		.btn:hover{
-			background-color: black;
-			color: white;
-		}
-		textarea{
-			resize: none;
-		}
-
-		/*.input-error{
-			border: 2px solid red;*/
-		/* } */
-	</style>
+	
+	<link rel="stylesheet" type="text/css" href="styles.css">
 
 </head>
 <body>
@@ -62,13 +16,17 @@
 		<form action="" class="formulario" id="formulario" name="formulario">
 
 				<label for="nombre">Nombre:</label><br>
-  				<input type="text" id="nombre" name="nombre" value=""><br><br>
-
+				<input type="text" id="nombre" name="nombre" value=""><br><br>
+				<div id="errorNombre"></div>
+			
   				<label for="email">Correo electrónico:</label><br>
   				<input type="text" id="email" name="email" value="" ><br><br>
+				<div id="errorCorreo"></div>
+
 
   				<label for="telefono">Teléfono:</label><br>
   				<input type="tel" id="telefono" maxlength="10" size="10" name="telefono" placeholder="(a 10 digitos)" value=""><br><br>
+				<div id="errorTelefono"></div>
 				
 						
 				<label for="colonia">¿De qué colonia nos contacta?</label>
@@ -80,11 +38,13 @@
   				<option value="otra">Otra</option>
 				</select>	
 				<br>
+				<div id="coloniaError"></div>
 
 				
 				<p>Razon principal por las que esta interesado en inscribirse a nuestros cursos:</p>
 				<input type="checkbox" id="razon1" class ="razones" value="condicion_fisica">
   				<label for="razon1">Mejorar condición física </label><br>
+				<span></span>
 
   				<input type="checkbox" id="razon2" class="razones" value="aprender_deporte">
  				<label for="razon2"> Aprender un deporte</label><br>
@@ -98,25 +58,24 @@
   				<input type="checkbox" id="razon5" class="razones" value="otra" >
   				<label for="razon3"> Otra</label><br><br>
 
-
 				<p>Escriba su pregunta, duda o comentario a continuación:</p>
 				<textarea id="mensaje" name="mensaje" rows="10" cols="65"></textarea><br>
+				<div id="mensajeRequerido"></div>
 				
 								
 				<ul class="error" id="error"></ul>
 			
 				<!--<button type="button" id="Enviar" onclick="validar()">Enviar</button>-->
-
 				<!--<button type="submit" class="submit" id = "submit" value="submit">Enviar</button>-->
-
 				<!--<button type="button" class="btn" id ="btn" >Enviar</button> FORMULARIOOO-->
 
-				<button type="button" class="btn" onclick="validar()">Enviar</button>
+				<button type="button" class="btn" onclick="validarFormulario()">Enviar</button>
 		</form>
 		
 	
 	</div>
 
-	<script src='validar.js'></script>
+	<!-- <script src="validacion.js"></script> -->
+	<script src="script.js"></script>
 </body>
 </html>
