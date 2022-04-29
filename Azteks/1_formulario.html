@@ -16,21 +16,21 @@
 		<form action="" class="formulario" id="formulario" name="formulario">
 
 				<label for="nombre">Nombre:</label><br>
-				<input type="text" id="nombre" name="nombre" value=""><br><br>
+				<input type="text" id="nombre" name="nombre" class="inputs" value=""><br><br>
 				<div id="errorNombre"></div>
 			
   				<label for="email">Correo electrónico:</label><br>
-  				<input type="text" id="email" name="email" value="" ><br><br>
+  				<input type="text" id="email" name="email" value="" class="inputs"><br><br>
 				<div id="errorCorreo"></div>
 
 
   				<label for="telefono">Teléfono:</label><br>
-  				<input type="tel" id="telefono" maxlength="10" size="10" name="telefono" placeholder="(a 10 digitos)" value=""><br><br>
+  				<input type="tel" id="telefono" maxlength="10" class="inputs" size="10" name="telefono" placeholder="(a 10 digitos)" value=""><br><br>
 				<div id="errorTelefono"></div>
 				
 						
 				<label for="colonia">¿De qué colonia nos contacta?</label>
-				<select id="colonia" name="colonia">
+				<select id="colonia" name="colonia" class="inputs">
 				<option value="0">--Elige una opción--</option>
   				<option value="valle_ceylan">Valle Ceylán</option>
  				<option value="izcalli_piramide">Izcalli Pirámide</option>
@@ -42,24 +42,25 @@
 
 				
 				<p>Razon principal por las que esta interesado en inscribirse a nuestros cursos:</p>
-				<input type="checkbox" id="razon1" class ="razones" value="condicion_fisica">
+				<input type="checkbox" id="razon1" class ="razones inputs" value="condicion_fisica">
   				<label for="razon1">Mejorar condición física </label><br>
-				<span></span>
 
-  				<input type="checkbox" id="razon2" class="razones" value="aprender_deporte">
+  				<input type="checkbox" id="razon2" class="razones inputs" value="aprender_deporte">
  				<label for="razon2"> Aprender un deporte</label><br>
 
-  				<input type="checkbox" id="razon3" class="razones" value="perder_peso" >
+  				<input type="checkbox" id="razon3" class="razones inputs" value="perder_peso" >
   				<label for="razon3"> Perder peso</label><br>
 
-  				<input type="checkbox" id="razon4" class="razones" value="conocer_gente" >
+  				<input type="checkbox" id="razon4" class="razones inputs" value="conocer_gente" >
   				<label for="razon3"> Conocer gente</label><br>
 
-  				<input type="checkbox" id="razon5" class="razones" value="otra" >
+  				<input type="checkbox" id="razon5" class="razones inputs" value="otra" >
   				<label for="razon3"> Otra</label><br><br>
 
+				<span id="RazonError"></span>
+
 				<p>Escriba su pregunta, duda o comentario a continuación:</p>
-				<textarea id="mensaje" name="mensaje" rows="10" cols="65"></textarea><br>
+				<textarea id="mensaje" name="mensaje" rows="10" cols="65" class="inputs"></textarea><br>
 				<div id="mensajeRequerido"></div>
 				
 								
@@ -71,6 +72,14 @@
 
 				<button type="button" class="btn" onclick="validarFormulario()">Enviar</button>
 		</form>
+
+		<hr>
+		<br>
+		<br>
+
+		<div class="formularios" id="formularios">
+
+		</div>
 		
 	
 	</div>

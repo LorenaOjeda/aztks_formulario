@@ -11,6 +11,8 @@
 const saludo = 'Hola mundo';
 
 const validarFormulario = () => {
+
+    const formulario = document.getElementById('formulario');
     
     // Referencias al nombre
     let inputNombre = document.querySelector('#nombre');
@@ -69,6 +71,7 @@ const validarFormulario = () => {
 
     // MENSAJE
     let mensageRef = document.querySelector('#mensaje');
+    let mensaje = document.querySelector('#mensaje').value;
     let mensajeRequerido = document.querySelector('#mensajeRequerido');
 
     if(mensageRef.value.length <= 0) {
@@ -78,4 +81,78 @@ const validarFormulario = () => {
         mensageRef.style.borderColor = 'green';
         mensajeRequerido.style.display = 'none';
     }
+
+    // CHECKBOX
+    let razones = document.querySelectorAll('.razones');
+    let errrorRazones = document.getElementById('RazonError');
+
+    let razonesSinChecked = [];
+    let valorCheckbox = '';
+
+    razones.forEach(razon => {
+        if (!razon.checked) {
+            razonesSinChecked.push(razon);
+        } else {
+            valorCheckbox = razon.value
+        }
+    })
+
+    if (razonesSinChecked.length == 5) {
+        errrorRazones.innerHTML = '<p style="color: red;">Debe elegir al menos una razón</p>'
+    } else {
+        errrorRazones.style.display = 'none';
+    }
+
+
+    // REFERENCIA AL DIV FORMULARIOS 
+    const formulariosDiv = document.getElementById('formularios');
+
+    if (nombre && correo && telefono && telefono.length >= 10 && coloniaRef && valorCheckbox && mensaje) {
+
+        const formularios = [];
+
+        // CREAR OBJETO
+        let valorDelFormulario = {
+            nombre,
+            correo,
+            telefono,
+            coloniaRef,
+            valorCheckbox,
+        }
+        
+        formularios.push(valorDelFormulario)
+
+        const formulariosLocal = localStorage.getItem('formularios');
+
+        const formulariosViejos = Object.keys(formulariosLocal).map(function(_) { return formulariosLocal[_] })
+        console.log(formulariosViejos);
+
+
+        // localStorage.setItem('formularios', JSON.stringify(formularios));
+    
+        // Agregamos al array
+        // formulariosValidos.push(valorDelFormulario);
+        // formularios.innerHTML = `
+        // <ul>
+        //     <li>${valorDelFormulario.nombre}</li>
+        //     <li>${valorDelFormulario.correo}</li>
+        //     <li>${valorDelFormulario.telefono}</li>
+        //     <li>${valorDelFormulario.coloniaRef}</li>
+        //     <li>${valorDelFormulario.valorCheckbox}</li>
+        // </ul>
+        // `
+
+
+        // Limpiamos el formulario
+        formulario.reset();
+
+        // Cambiamos color de los inputs
+        inputNombre.style.borderColor   = 'gray';
+        inputCorreo.style.borderColor   = 'gray';
+        inputTelefono.style.borderColor = 'gray';
+        coloniaSelect.style.borderColor = 'gray';
+        mensageRef.style.borderColor    = 'gray';
+        
+    }
+
 };
